@@ -9,12 +9,12 @@ import Messages from "../components/Messages/Messages";
 import Input from "../components/Input/Input";
 import TextContainer from "../components/TextContainer/TextContainer";
 
-const ENDPOINT = "http://localhost:5000/";
+const ENDPOINT = "https://vercel.com/karthickwebdevelopers-projects/chat-app-server/2K3rptUefPKyQ5SysssfKqh45rSH"
 
 let socket;
 
 const Chat = () => {
-  const location = useLocation(); // ✅ Use useLocation() from react-router-dom
+  const location = useLocation(); 
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   const [users, setUsers] = useState([]);
@@ -24,7 +24,7 @@ const Chat = () => {
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
-    socket = io(ENDPOINT, { transports: ["websocket"] }); // ✅ Specify transport for better performance
+    socket = io(ENDPOINT, { transports: ["websocket"] }); 
 
     setRoom(room);
     setName(name);
